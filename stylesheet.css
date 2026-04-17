@@ -1,7 +1,7 @@
 
 body {
     font-family: 'Segoe UI', Arial, sans-serif;
-    background-color: #fbf9ef;
+    background-color: #0f172a;
 }
 
 section {
@@ -10,7 +10,7 @@ section {
 
 h1 {
     font-size: 38px;
-    color: #064471;
+    color: #38bdf8;
 }
 
 h2 {
@@ -20,13 +20,12 @@ color: #13aad8;
 }
 
 h3 {
-    text-align: center;
+    color: #22c55e;
 }
 
 .techStackHeading {
     font-size: 20px;
     color: #94a3b8;
-    text-align: left;
 }
 
 p {
@@ -35,38 +34,60 @@ p {
 }
 
 li {
-    color: #023071;
+    color: #94a3b8;
 }
 
 a {
     color: 	#16b199;
 }
 
+.alignCenter {
+        text-align:center;
+}
+
+.marginTop{
+    margin-top: 50px;
+}
 
 .techInfo{
-    padding: 5px;
+    margin-right: 5px;
+    padding: 12px;
     color: rgb(247, 245, 243);
     border-radius: 5px;
     display: inline;
+}
+
+.projectInfo {
+    margin: 20px;
+    height: 145px;
+    padding: 3px 30px 3px 30px;
+    color: rgb(247, 245, 243);
+    background-color:#1e293b;
+    border-radius: 5px;
+    border-color: #22c55e;
+    border-style: solid;
+    border-width: 2px;
+    box-shadow: 0px 2px 4px yellowgreen;
+    display: inline-block;
 }
 
 #language {
     background-color: #006b3c;
 }
 
-.Frontend {
+#frontend {
     background-color: #f8b800;
     
 }
 
-.Backend {
+#backend {
     background-color: #741b47;
 }
 
-.Database {
+#database {
     background-color: #2c78b7;
 }
 
-.Devops {
+#devops {
     background-color: #cc125c;
 }
