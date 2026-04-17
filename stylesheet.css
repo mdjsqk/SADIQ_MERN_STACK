@@ -1,0 +1,78 @@
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background-color: #fbf9ef;
+}
+
+section {
+    margin: 5px;
+}
+
+h1 {
+    font-size: 38px;
+    color: #064471;
+}
+
+h2 {
+font-size: 30px;
+color: #13aad8;
+
+}
+
+h3 {
+font-size: 22px;
+color: #94a3b8;
+}
+
+p {
+    font-size: 16px;
+    color: #023071;
+}
+
+li {
+    color: #023071;
+}
+
+a {
+    color: 	#16b199;
+}
+
+.Languages {
+    background-color: #006b3c;
+    margin-right: 1320px;
+    padding: 5px;
+    color: rgb(247, 245, 243);
+    border-radius: 2px;
+}
+
+.Frontend {
+    background-color: #f8b800;
+    margin-right: 1320px;
+    padding: 5px;
+    color: rgb(247, 245, 243);
+    border-radius: 2px;
+}
+
+.Backend {
+    background-color: #741b47;
+    margin-right: 1320px;
+    padding: 5px;
+    color: rgb(247, 245, 243);
+    border-radius: 2px;
+}
+
+.Database {
+    background-color: #2c78b7;
+    margin-right: 1300px;
+    padding: 5px;
+    color: rgb(247, 245, 243);
+    border-radius: 2px;
+}
+
+.Devops {
+    background-color: #cc125c;
+    margin-right: 1250px;
+    padding: 5px;
+    color: rgb(247, 245, 243);
+    border-radius: 2px;
+}
