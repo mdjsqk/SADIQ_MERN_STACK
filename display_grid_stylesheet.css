@@ -1,0 +1,32 @@
+* {
+  margin : 0px;
+  padding: 0px;
+}
+
+body {
+  background-color:cornflowerblue;
+  color:darkmagenta;
+}
+
+.container {
+  background-color:beige;
+  height: 600px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr) ;
+  gap: 50px;
+
+}
+
+.box:nth-child(3) {
+  background-color: rgb(218, 104, 104);
+}
+
+.box {
+  background-color: darkgoldenrod;
+  border-style: solid;
+  border-color: crimson;
+  height: 100px;
+  width: 100px;
+  padding: 25px;
+}
