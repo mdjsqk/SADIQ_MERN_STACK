@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>UI Interactions Demo</title>
+
+<style>
+
+/* ===================== BASE + BACKGROUND ===================== */ 
+body {
+  margin: 0;
+  font-family: Arial;
+  background: radial-gradient(circle at top, #0f172a, #020617);
+  color: white;
+}
+
+/* grid pattern */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
+                    linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px);
+  background-size: 40px 40px;
+  z-index: -1;
+}
+
+section {
+  padding: 40px;
+  text-align: center;
+}
+
+/* =====================
+   NAVBAR
+===================== */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(10px);
+}
+
+.navbar a {
+  margin: 0 10px;
+  text-decoration: none;
+  color: #94a3b8;
+  transition: 0.3s;
+}
+
+.navbar a:hover {
+  color: white;
+  transform: translateY(-2px);
+}
+
+/* =====================
+   COMMON BUTTON STYLE
+===================== */
+.btn {
+  padding: 14px 30px;
+  border: none;
+  cursor: pointer;
+  margin: 10px;
+  transition: 0.3s;
+  border-radius: 8px;
+}
+
+/* =====================
+   GRADIENT BUTTON
+===================== */
+.gradient {
+  background: linear-gradient(45deg, #8b5cf6, #06b6d4);
+}
+
+.gradient:hover {
+  transform: scale(1.05);
+}
+
+/* =====================
+   GLOW EFFECT
+===================== */
+.glow {
+  background: #111;
+  box-shadow: 0 0 10px #8b5cf6;
+}
+
+.glow:hover {
+  box-shadow: 0 0 25px #8b5cf6;
+}
+
+/* =====================
+   GOLD SHINE
+===================== */
+.gold {
+  background: linear-gradient(90deg, gold, #fff, gold);
+  background-size: 200%;
+  animation: shine 3s infinite linear;
+  color: black;
+}
+
+@keyframes shine {
+  from { background-position: 0%; }
+  to { background-position: 200%; }
+}
+
+/* =====================
+   SILVER SHINE
+===================== */
+.silver {
+  background: linear-gradient(90deg, #aaa, #fff, #aaa);
+  background-size: 200%;
+  animation: shine 3s infinite linear;
+  color: black;
+}
+
+/* =====================
+   RAINBOW BUTTON
+===================== */
+.rainbow {
+  background: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet);
+  background-size: 300%;
+  animation: rainbowMove 4s infinite linear;
+}
+
+@keyframes rainbowMove {
+  from { background-position: 0%; }
+  to { background-position: 300%; }
+}
+
+/* =====================
+   50-50 SPLIT BUTTON
+===================== */
+.split {
+  background: linear-gradient(90deg, rgb(8, 159, 0) 50%, rgb(170, 170, 0) 50%);
+}
+
+/* =====================
+   25%-75% SPLIT BUTTON
+===================== */
+.split2575 {
+  background: linear-gradient(90deg, red 25%, blue 75%);
+}
+
+/* =====================
+   STRIPED BUTTON
+===================== */
+.stripes {
+  background: repeating-linear-gradient(
+    90deg,
+   rgb(235, 7, 7) 0% 15%,
+  rgb(242, 244, 242) 15% 30%,
+  rgb(33, 194, 0) 30% 45%,
+  rgb(226, 207, 1) 45% 60%,
+  rgb(242, 244, 242) 60% 100%
+  );
+}
+
+/* =====================
+   ARROW BUTTON
+===================== */
+.arrow-btn {
+  position: relative;
+  background: purple;  
+  color: white;
+  font-weight: bold;
+  font-size: medium;
+  font-family: Arial, Helvetica, sans-serif;
+  padding-right: 40px;
+}
+
+.arrow-btn::after {
+  content: "➜";
+  position: absolute;
+  right: 10px;
+  transition: 0.3s;
+}
+
+.arrow-btn:hover::after {
+  right: 5px;
+}
+
+/* =====================
+   CARD HOVER (REAL UI)
+===================== */
+.card {
+  width: 200px;
+  padding: 20px;
+  margin: auto;
+  background: #111;
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-10px) scale(1.05);
+}
+
+/* =====================
+   FADE + SLIDE ANIMATION
+===================== */
+.fade {
+  animation: slideUp 1s ease;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* =====================
+   GLASS BASE CLASS
+===================== */
+.glass {
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 12px;
+}
+
+/* =====================
+   NAVBAR (GLASS)
+===================== */
+.navbar1 {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  position: sticky;
+  top: 0;
+}
+
+.navbar1.glass a {
+  margin: 0 10px;
+  text-decoration: none;
+  color: #94a3b8;
+  transition: 0.3s;
+}
+
+.navbar1.glass a:hover {
+  color: white;
+  transform: translateY(-2px);
+}
+
+/* =====================
+   BUTTON BASE
+===================== */
+.btn {
+  padding: 12px 25px;
+  border: none;
+  margin: 10px;
+  cursor: pointer;
+  position: relative;
+  transition: 0.3s;
+  border-radius: 8px;
+}
+
+/* =====================
+   GLASS BUTTON
+===================== */
+.glass-btn {
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.2);
+}
+
+.glass-btn:hover {
+  transform: scale(1.05);
+}
+
+/* =====================
+   ARROW
+===================== */
+.arrow::after {
+  content: " ➜";
+}
+
+/* =====================
+   BADGE CARD (GLASS)
+===================== */
+.card {
+  position: relative;
+  width: 220px;
+  margin: auto;
+  padding: 20px;
+}
+
+.card.glass:hover {
+  transform: translateY(-10px) scale(1.03);
+  transition: 0.3s;
+}
+
+.card::after {
+  content: "NEW";
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background: red;
+  padding: 3px 6px;
+  font-size: 10px;
+}
+
+/* =====================
+   HOVER UNDERLINE
+===================== */
+.link {
+  position: relative;
+  display: inline-block;
+}
+
+.link::after {
+  content: "";
+  display: block;
+  height: 2px;
+  background: cyan;
+  transform: scaleX(0);
+  transition: 0.3s;
+}
+
+.link:hover::after {
+  transform: scaleX(1);
+}
+
+/* =====================
+   GLASS PANEL
+===================== */
+.panel {
+  width: 300px;
+  margin: auto;
+  padding: 30px;
+}
+
+/* =====================
+   TOOLTIP
+===================== */
+.tooltip {
+  position: relative;
+}
+
+.tooltip::after {
+  content: "Glass Tooltip";
+  position: absolute;
+  top: -35px;
+  left: 0;
+  background: rgba(118, 173, 8, 0.7);
+  padding: 5px 10px;
+  font-size: 12px;
+  border-radius: 5px;
+  display: none;
+}
+
+.tooltip:hover::after {
+  display: block;
+}
+
+/* =====================
+   LOADING
+===================== */
+.loading::after {
+  content: "...";
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0% { opacity: 0 }
+  50% { opacity: 1 }
+  100% { opacity: 0 }
+}
+
+/* =====================
+   CHECK ICON
+===================== */
+.success::before {
+  content: "✔ ";
+  color: lime;
+}
+
+/* =====================
+   BULLET LIST
+===================== */
+ul.custom li {
+  list-style: none;
+}
+
+ul.custom li::before {
+  content: "• ";
+  color: cyan;
+}
+
+/* =====================
+   BADGE
+===================== */
+.card {
+  position: relative;
+  width: 200px;
+  margin: auto;
+  padding: 20px;
+  background: #111;
+}
+
+.card::after {
+  content: "NEW";
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background: red;
+  padding: 3px 6px;
+  font-size: 10px;
+}
+
+/* =====================
+   QUOTE
+===================== */
+.quote::before {
+  content: "“";
+  font-size: 40px;
+  color: gray;
+}
+
+/* =====================
+   DIVIDER
+===================== */
+.title::after {
+  content: "";
+  display: block;
+  height: 2px;
+  background: cyan;
+  margin-top: 10px;
+}
+
+/* =====================
+   HOVER UNDERLINE
+===================== */
+.link {
+  position: relative;
+  display: inline-block;
+}
+
+.link::after {
+  content: "";
+  display: block;
+  height: 2px;
+  background: cyan;
+  transform: scaleX(0);
+  transition: 0.3s;
+}
+
+.link:hover::after {
+  transform: scaleX(1);
+}
+
+/* =====================
+   OVERLAY EFFECT
+===================== */
+.overlay-box {
+  position: relative;
+  width: 200px;
+  height: 100px;
+  margin: auto;
+  background: #222;
+}
+
+.overlay-box::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(255,255,255,0.1);
+}
+
+/* =====================
+   GRADIENT BORDER
+===================== */
+.border-box {
+  position: relative;
+  width: 200px;
+  margin: auto;
+  padding: 20px;
+  background: #111;
+}
+
+.border-box::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  background: linear-gradient(45deg, purple, cyan);
+  z-index: -1;
+}
+
+/* =====================
+   COUNTER
+===================== */
+.counter {
+  counter-reset: item;
+}
+
+.counter li::before {
+  counter-increment: item;
+  content: counter(item) ". ";
+  color: orange;
+}
+
+/* =====================
+   STAR ICON
+===================== */
+.star::before {
+  content: "★ ";
+  color: gold;
+}
+
+/* =====================
+   STRIPED OVERLAY
+===================== */
+.stripe-box {
+  position: relative;
+  width: 200px;
+  height: 100px;
+  margin: auto;
+}
+
+.stripe-box::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    45deg,
+    purple 0 10px,
+    cyan 10px 20px
+  );
+}
+
+/* =====================
+   TOOLTIP
+===================== */
+.tooltip {
+  position: relative;
+}
+
+.tooltip::after {
+  content: "Tooltip text";
+  position: absolute;
+  top: -30px;
+  background: black;
+  padding: 5px;
+  font-size: 12px;
+  display: none;
+}
+
+.tooltip:hover::after {
+  display: block;
+}
+
+/* =====================
+   STATUS DOT
+===================== */
+.status::before {
+  content: "● ";
+  color: green;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<div class="navbar">
+  <div>Logo</div>
+  <div>
+    <a href="#">Home</a>
+    <a href="#">Projects</a>
+    <a href="#">Contact</a>
+  </div>
+</div>
+
+<!-- GRADIENT -->
+<section>
+  <h2>Gradient Button</h2>
+  <button class="btn gradient">Click Me</button>
+</section>
+
+<!-- GLOW -->
+<section>
+  <h2>Glow Effect</h2>
+  <button class="btn glow">Hover Me</button>
+</section>
+
+<!-- GOLD -->
+<section>
+  <h2>Gold Shine</h2>
+  <button class="btn gold">Gold</button>
+</section>
+
+<!-- SILVER -->
+<section>
+  <h2>Silver Shine</h2>
+  <button class="btn silver">Silver</button>
+</section>
+
+<!-- RAINBOW -->
+<section>
+  <h2>Rainbow Button</h2>
+  <button class="btn rainbow">Rainbow</button>
+</section>
+
+<!-- SPLIT -->
+<section>
+  <h2>Split 50-50</h2>
+  <button class="btn split">Split</button>
+</section>
+
+<!-- 25/75 -->
+<section>
+  <h2>25% / 75%</h2>
+  <button class="btn split2575">Split</button>
+</section>
+
+<!-- STRIPES -->
+<section>
+  <h2>Striped Button</h2>
+  <button class="btn stripes">Stripes</button>
+</section>
+
+<!-- ARROW -->
+<section>
+  <h2>Arrow Button</h2>
+  <button class="btn arrow-btn">Next</button>
+</section>
+
+<!-- CARD -->
+<section>
+  <h2>Card Hover</h2>
+  <div class="card">Hover Me</div>
+</section>
+
+<!-- FADE -->
+<section>
+  <h2>Fade + Slide Animation</h2>
+  <div class="card fade">Animated Card</div>
+</section>
+
+<!-- GLASS NAVBAR -->
+<div class="navbar1 glass">
+  <div>Logo</div>
+  <div>
+    <a href="#">Home</a>
+    <a href="#">Projects</a>
+    <a href="#">Contact</a>
+  </div>
+</div>
+
+<!-- GLASS BUTTON -->
+<section>
+  <h2>Glass Button</h2>
+  <button class="btn glass-btn arrow">Click Me</button>
+</section>
+
+<!-- GLASS CARD -->
+<section>
+  <h2>Glass Card</h2>
+  <div class="card glass">
+    Premium Card
+  </div>
+</section>
+
+<!-- GLASS PANEL -->
+<section>
+  <h2>Glass Panel</h2>
+  <div class="panel glass">
+    This is glassmorphism UI panel
+  </div>
+</section>
+
+<!-- LINK EFFECT -->
+<section>
+  <h2>Hover Underline</h2>
+  <a class="link">Hover Me</a>
+</section>
+
+<!-- TOOLTIP -->
+<section>
+  <h2>Tooltip</h2>
+  <button class="btn glass-btn tooltip">Hover</button>
+</section>
+
+<!-- LOADING -->
+<section>
+  <h2>Loading</h2>
+  <p class="loading">Loading</p>
+</section>
+
+<section>
+  <h2>Success Icon</h2>
+  <p class="success">Payment Successful</p>
+</section>
+
+<section>
+  <h2>Custom Bullet List</h2>
+  <ul class="custom">
+    <li>Item One</li>
+    <li>Item Two</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Badge</h2>
+  <div class="card">Product</div>
+</section>
+
+<section>
+  <h2>Quote</h2>
+  <p class="quote">This is a quote</p>
+</section>
+
+<section>
+  <h2 class="title">Divider Example</h2>
+</section>
+
+<section>
+  <h2>Hover Underline</h2>
+  <a class="link">Hover Me</a>
+</section>
+
+<section>
+  <h2>Overlay Effect</h2>
+  <div class="overlay-box"></div>
+</section>
+
+<section>
+  <h2>Gradient Border</h2>
+  <div class="border-box">Premium</div>
+</section>
+
+<section>
+  <h2>Counter List</h2>
+  <ul class="counter">
+    <li>Step One</li>
+    <li>Step Two</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Star Icon</h2>
+  <p class="star">Premium Feature</p>
+</section>
+
+<section>
+  <h2>Striped Background</h2>
+  <div class="stripe-box"></div>
+</section>
+
+<section>
+  <h2>Tooltip</h2>
+  <button class="btn tooltip">Hover Me</button>
+</section>
+
+<section>
+  <h2>Status</h2>
+  <p class="status">Online</p>
+</section>
+
+<section>
+  <h2>Loading</h2>
+  <p class="loading">Loading</p>
+</section>
+
+</body>
+</html>
