@@ -1,0 +1,48 @@
+body {
+  font-family: Arial;
+}
+
+/* ISSUE 1: wrong selector */
+.container {
+  background: black;
+}
+
+/* ISSUE 2: specificity conflict */
+.card {
+  color: red;
+}
+
+.container .card {
+  color: blue;
+}
+
+/* ISSUE 3: hover not working */
+.text:hover {
+  color: green;
+}
+
+.container .text {
+  color: purple;
+}
+
+.container .text:hover {
+  color: green;
+}
+
+/* ISSUE 4: inline override simulation */
+.special {
+  color: orange !important;
+}
+
+/* ISSUE 5: layout issue */
+.container {
+  display: flex;
+}
+
+.card {
+  width: 200px;
+}
+
+.card {
+  width: 300px;
+}
