@@ -1,71 +1,92 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="stylesheet.css" />
-    <title>Mohammed Sadiq (Full stack developer)</title>
-  </head>
-  <body>
-    <main>
-    <section class = "techStackHeading alignCenter">
-      <h1>Hi ! &nbsp;I'm Sadiq</h1>
-      <h2>
-        Full Stack Developer | Product Engineer | System Design Enthusiast
-      </h2>
-      <h3>Building scalable web applications using TypeScript & MERN stack</h3>
-    </section>
-    <section class="alignCenter marginTop">
-      <h2>About Me</h2>
-      <ul>
-        <li>
-          Currently designing and building
-          <span style="font-weight: bold">
-            end-to-end full stack applications</span
-          >.
-        </li>
-        <li>
-          Strong focus on
-          <span style="font-weight: bold"
-            >scalability, clean architecture, and performance</span
-          >.
-        </li>
-        <li>
-          Passionate about building real-world products, not just demos :)
-        </li>
-      </ul>
-    </section>
-    <section class="techStackHeading alignCenter marginTop">
-      <h2>Tech Stack</h2>
-      <p class="techInfo" id="language">TypeScript | JavaScript</p>
 
-      <p class="techInfo" id="frontend">React.js | HTML | CSS</p>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Sadiq | Full Stack Developer</title>
+        <link rel="stylesheet" href="portfolioStyle.css">
 
-      <p class="techInfo" id="backend">Node.js | Express</p>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=BBH+Bartle&family=Bebas+Neue&family=Exo+2:ital,wght@0,100..900;1,100..900&family=Sora:wght@100..800&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    </head>
 
-      <p class="techInfo" id="database">MongoDB | PostgreSQL</p>
+    <body>
+        <div class="container">
+            <header>
+                <h1 class="sora">Sadiq <span class="logo">&#9654;</span></h1>
+                <nav class="exo-2">
+                    <a href="#home">HOME</a>
+                    <a href="#about-me">ABOUT</a>
+                    <a href="#mywork">MY WORK</a>
+                    <a href="#contact-me">CONTACT</a>
+                </nav>
+                <button class="exo-2 yellowButton">
+                    Let's Connect !
+                </button>
+            </header>
+            <main id="home">
+                <section class="hero-text">
+                    <h1 class="bebas-neue-regular">
+                        LET'S<br>&nbsp;BUILD<br><span class="wide-text">&nbsp;&nbsp;&nbsp;TOGETHER...</span>
+                    </h1>
+                </section>
+                <section class="hero-profile-photo">
+                    <div>
+                        <img src="./resources/profile-picture.png" alt="Profile-picture">
+                    </div>
+                </section>
+                <section class="cta-buttons">
+                    <button class="exo-2 yellowButton">Connect With Me!</button>
+                    <button class="exo-2 transparentButton">My Services</button>
+                </section>
+                <section class="hero-about">
+                    <div>
+                        <h2 class="exo-2">HELLO, I'M SADIQ</h2>
+                        <p class="Urbanist">
+                            Currently designing and building end-to-end full stack applications.<br>
+                            Strong focus on scalability, clean architecture, and performance.<br>
+                            Passionate about building real-world products, not just demos :)
+                        </p>
+                    </div>
+                </section>
+            </main>
+            <section id="about-me" class="about-me">
+                <h2 class="exo-2">ABOUT ME</h2>
+                <p class="Urbanist">
+                    I am Full Stack Developer with expertise in the MERN stack, building scalable, performant and user-centric web applications.<br> 
+                    I turn ideas into production-ready products with clean architecture and modern technologies.
+                </p>
+            </section>
+            <section id="mywork" class="my-work">
+                <h2 class="exo-2">MY WORK</h2>
+                <div class="projectInfoCard bebas-neue-regular">
+                    <span class="sora">E-commerce Platform</span>
+                </div>
+                <div class="projectInfoCard bebas-neue-regular">
+                    <span class="sora">SaaS Platform</span>
+                </div>
+                <div class="projectInfoCard bebas-neue-regular">
+                    <span class="sora">Rest API Platform</span>
+                </div>
+            </section>
+            <section id="contact-me" class="contact">
+                <h2 class="exo-2">CONTACT ME</h2>
+                <div class="Urbanist">
+                    LinkedIn : <a href="https://www.linkedin.com/in/mohammed-sadiq-fullstack/"> mohammed-sadiq-fullstack </a>
+                </div>
+                <div class="Urbanist">
+                    Email : md.jaffer.sq.k@gmail.com
+                </div>
+                <div class="Urbanist">
+                    Location : Hyderabad, India
+                </div>
+            </section>
 
-      <p class="techInfo" id="devops">Docker | GitHub Actions | Git</p>
-    </section>
-    <section class="alignCenter marginTop">
-      <h2>Featured Projects</h2>
-        <p class="projectInfo"><span>E-commerce Platform</span></p>
-        <p class="projectInfo"><span>SaaS Platform</span></p>
-        <p class="projectInfo"><span>Rest API Platform</span></p>
-    </section>
-    <section>
-      <h3>Connect With Me</h3>
-      <ul>
-        <li>
-          LinkedIn :
-          <a href="https://www.linkedin.com/in/mohammed-sadiq-fullstack/">
-            mohammed-sadiq-fullstack
-          </a>
-        </li>
-        <li>Email : md.jaffer.sq.k@gmail.com</li>
-        <li>Location : Hyderabad, India</li>
-      </ul>
-    </section>
-    </main>
-  </body>
+            <footer>
+
+            </footer>
+        </container>
+    </body>
 </html>
