@@ -3,30 +3,30 @@
   padding: 0px;
 }
 
-body {
-  background-color:cornflowerblue;
-  color:darkmagenta;
+body{
+      color: #01011a;
+      border-radius: .2rem;
+      background-color: #ffd9d9;
 }
 
 .container {
-  background-color:beige;
-  height: 600px;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(3, 1fr) ;
-  gap: 50px;
-
-}
-
-.box:nth-child(3) {
-  background-color: rgb(218, 104, 104);
+  grid-template-rows: repeat(4, minmax(100px, auto));
+  grid-template-columns: repeat(4, minmax(100px, auto));
 }
 
 .box {
-  background-color: darkgoldenrod;
+  background-color: #e91e63;
   border-style: solid;
-  border-color: crimson;
-  height: 100px;
-  width: 100px;
-  padding: 25px;
+  border-color: black;
+  border-width: 1px;
+  height: 200px;
+  width: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+
+
+
+

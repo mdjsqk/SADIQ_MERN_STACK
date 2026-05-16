@@ -8,15 +8,22 @@ body {
     background-color: #faf6e7; 
 }
 
+.container {
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 120px repeat(4, auto) ;
+}
 
 header {
+    grid-row: 1;
+    grid-column: 1/4;
+
     display: flex;
     align-items: center;
-    gap: 80px;
+    gap: 90px;
 }
 
 header h1 {
-    position: relative;
     font-weight: bold;
     font-size: 40px;
 }
@@ -34,24 +41,20 @@ header h1 {
 
 nav {
     display: flex;
-    gap: 80px;
+    gap: 40px;
 }
 
 nav a {
-    justify-self: space-between;
     text-decoration: none;
     font-size: 22px;
     color: black;
+    border-bottom: 3px solid transparent;
 }
 
 nav a:hover {
     border-bottom: 3px solid #FFCC00; 
-    transform: scale(1.2) 
 }
 
-header button {
-    margin-left: 25%;
-}
 
 .yellowButton {
     background-color: #FFCC00;
@@ -77,29 +80,36 @@ header button {
     color: #fff;
 }
 
+header button {
+    margin-left: 35%;
+}
+
 main {
     margin-top: 30px;
+    grid-row: 2;
+    grid-column: 1/4;
+
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr;
-    align-items: start;
+    grid-template-rows: 1fr auto;
+    grid-template-columns: repeat(2, 1fr);
 }
 
 .hero-text {
-    grid-column: 1/3;
-    grid-row: 1;
-    z-index: 1;
     margin-top: 30px;
-    margin-bottom: 30px;
- }
+    grid-row: 1;
+    grid-column-start: 1;
+    grid-column-end: 4;
+    z-index: 1;
+}
 
 .hero-text h1 {
-    font-size: 250px;
+    font-size: 180px;
     font-weight: 500;
     line-height: 0.80;
     color: black;
     letter-spacing: 20px;
- }
+    align-self: baseline;
+}
 
 .wide-text {
     letter-spacing: 18px;
@@ -119,14 +129,14 @@ main {
 }
 
 .hero-profile-photo {
-    grid-column: 2/3;
     grid-row: 1;
+    grid-column: 2/4;
 }
 
 .hero-profile-photo img {
-
-    transform: scaleX(.8); /* horizontal */
-    transform: scaleY(.9); /* vertical */
+    display: block;
+    width: 100%;
+    height: auto;
     mask-image: radial-gradient(
     circle, 
     black 50%, 
@@ -136,19 +146,19 @@ main {
 
 .cta-buttons {
     grid-row: 2;
+    grid-column: 1/2;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    margin-top: 20px;
-    margin-left: 120px;
+    align-items: center;
     gap: 15px;
 } 
 
 .hero-about {
     grid-row: 2;
+    grid-column: 2/3;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     gap: 15px;
 }
 
@@ -163,42 +173,48 @@ main {
 }
 
 .about-me {
-    margin-top: 30px;
+    grid-row: 3;
+    grid-column: 1/4;
+    margin-top: 35px;
+
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
+    gap: 15px;
+
 }
 
 .about-me h2 {
     font-size: 28px;
     font-weight: 700;
-    margin-top: 22px;
 }
 
 .about-me P {
     font-size: 22px;
     color: #555;
-    margin-top: 16px;
-    align-self: space-around;
 }
 
 .my-work {
+    grid-row: 4;
+    grid-column: 1/4;
+
     margin-top: 22px;
+
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 0.25fr 1fr;
+    grid-template-columns: repeat(3, auto);
+    grid-template-rows: repeat(2, auto);
 }
+
 .my-work h2 {
-    grid-column: 2/3;
-    justify-self: center;
-    align-self: center;
     font-size: 28px;
     font-weight: 700;
+
+    grid-row: 1;
+    grid-column: 1/4;
+    text-align: center;
 }
 
 .projectInfoCard {
-    grid-row: 2;
     margin: 20px;
     height: 200px;
     padding: 3px 30px 3px 30px;
@@ -209,6 +225,8 @@ main {
     border-color: #FFCC00;
     box-shadow: 14px 11px 10px -5px rgba(255,204,0,0.41);
     display: inline-block;
+
+    grid-row: 2;
 }
 
 .projectInfoCard:hover {
@@ -218,25 +236,31 @@ main {
 
 .contact {
     margin-top: 22px;
+
+    grid-row: 5;
+    grid-column: 1/4;
+
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows:1fr;
+    grid-template-columns: repeat(3, auto);
+    grid-template-rows: repeat(2, auto);
 }
 
 .contact h2 {
-    grid-column: 1/4;
-    justify-self: center;
-    align-self: center;
     font-size: 28px;
     font-weight: 700;
+
+    grid-row: 1;
+    grid-column: 1/4;
+    text-align: center;
 }
 
 .contact div {
-    justify-self: center;
-    align-self: center;
+    margin-top: 22px;
     font-size: 22px;
     color: #555;
-    margin-top: 16px;
+    text-align: center;
+
+    grid-row: 2;
 }
 
 .contact a {
@@ -285,14 +309,23 @@ main {
 }
 
 @media (max-width:1024px) {
-    header {
-        display: flex;
-        flex-direction: column;
+
+    .container {
+        display:grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(5, auto) ;
     }
 
-    header h1 {
-        margin: 22px 0px;
+    header {
+        grid-row: 1;
+        grid-column: 1/3;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
     }
+
 
     nav {
         display: flex;
@@ -301,23 +334,22 @@ main {
     }
 
     header button {
-        margin: 30px;
-        justify-self:flex-end;
+        margin-left: 0%;
     }
 
     main {
         margin-top: 30px;
         display: grid;
-        grid-template-columns: 1fr;
-        grid-template-rows: auto auto 150px 75px;
-        align-items: start;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto auto;
+
     }
 
     .hero-text {
-        grid-column: 1;
+        grid-column: 1/3;
         grid-row: 1;
-        margin-top: 30px;
-
+        z-index: 1;
+        align-self: self-end;
     }
 
     .hero-text h1 {
@@ -327,27 +359,37 @@ main {
     }
 
     .hero-profile-photo {
-        grid-column: 1;
-        grid-row: 2;
+        grid-column: 2;
+        grid-row: 1;
+    }
+
+    .hero-profile-photo img {
+        display: block;
+        height: auto;
+        width: auto;
+        mask-image: radial-gradient(
+        circle, 
+        black 50%, 
+        transparent 93%
+        );
     }
 
     .hero-about {
-        grid-row: 3;
+        grid-row: 2;
+        grid-column: 2/3;
         display: flex;
         flex-direction: column;
-        align-items: flex-start;
+        align-items: center;
         gap: 15px;
     }
 
     .cta-buttons {
-        grid-row: 4;
+        grid-row: 2;
+        grid-column: 1;
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         justify-content: flex-start;
-        align-items: center;
-        margin-top: 20px;
-        margin-left: 120px;
-        gap: 250px;
+        gap: 25px;
     }
     
     .my-work {
@@ -363,19 +405,31 @@ main {
 
     .projectInfoCard {
         grid-row: auto;
-        width: 80%;
+        width: auto;
         padding: 20px;
         text-align: center;
     }
 
     .contact {
         margin-top: 22px;
-        grid-template-columns: 1fr;
-        grid-template-rows: auto;
+
+        grid-row: 5;
+        grid-column: 1/3;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
     .contact h2 {
-        grid-column: 1; 
-        justify-self: center;
+        text-align: center;
+    }
+
+    .contact div {
+        text-align: center;
+    }
+
+    .contact a {
+        color: 	#06a890;
     }
 }
