@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF - 8" />
+    <meta http-equiv="X - UA - Compatible" content="IE = edge" />
+    <meta name="viewport" content="width = device-width, initial-scale = 1.0" />
+    <title>Document</title>
+    <style>
+      .button {
+        margin-bottom: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="doubleHolder">
+      <button class="double">double</button>
+    </div>
+    <div id="resultantDiv"></div>
+
+    <script>
+      //Q Create a button that is destroyed by clicking on it but two new buttons are created in it's place.
+      
+      let firstButton = document.querySelector("button");
+      let secondBtn = document.createElement("button");
+          secondBtn.textContent = "Button 2";
+          secondBtn.classList.add("button");
+      let thirdBtn = document.createElement("button");
+          thirdBtn.textContent = "Button 3";
+          thirdBtn.classList.add("button");
+      let brSpace = document.createElement("br");
+
+      let resultantDivArea = document.getElementById("resultantDiv");
+      
+      firstButton.addEventListener('dblclick', () => {
+        resultantDivArea.appendChild(secondBtn);
+        resultantDivArea.appendChild(brSpace);
+        resultantDivArea.appendChild(thirdBtn);
+        firstButton.remove();
+      });
+
+    </script>
+  </body>
+</html>

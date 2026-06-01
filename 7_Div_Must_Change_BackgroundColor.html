@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .myDiv {
+        height: 100px;
+        width: 100px;
+        padding: 10px;
+        border: 1px solid black;
+      }
+
+      .divColorRed {
+        background-color: crimson;
+      }
+
+      .divColorBlue {
+        background-color: blue;
+      }
+
+      .divColorGreen {
+        background-color: green;
+      }
+
+      .divColorNone {
+        background-color: none;
+      }
+
+    </style>
+  </head>
+  <body>
+    <div id="div1" class="myDiv">Red</div>
+    <div id="div2" class="myDiv">Blue</div>
+    <div id="div3" class="myDiv">Green</div>
+    <button id="resetBtn">Reset</button>
+
+    <ul>
+      <li>Red</li>
+      <li>Blue</li>
+      <li>Green</li>
+    </ul>
+  </body>
+  <script>
+    // On click of the Color name corresponding divs must change their background-color.
+    let listLi = document.querySelectorAll("li");
+    console.log(listLi[0]);
+
+    listLi[0].addEventListener("click", function () {
+      console.log("Red");
+      let redDiv = document.getElementById("div1");
+      redDiv.classList.add("divColorRed");
+    });
+
+    
+    listLi[1].addEventListener("click", function () {
+      let blueDiv = document.getElementById("div2");
+      blueDiv.classList.add("divColorBlue");
+    });
+
+    listLi[2].addEventListener("click", function () {
+      let greenDiv = document.getElementById("div3");
+      greenDiv.classList.add("divColorGreen");
+    });
+
+    let resetBtn = document.getElementById("resetBtn");
+
+    resetBtn.addEventListener("click", function () {
+    
+      let redDiv = document.getElementById("div1");
+      redDiv.classList.remove("divColorRed");
+      redDiv.classList.add("divColorNone");
+
+      let blueDiv = document.getElementById("div2");
+      blueDiv.classList.remove("divColorBlue");
+      blueDiv.classList.add("divColorNone");
+
+      let greenDiv = document.getElementById("div3");
+      greenDiv.classList.remove("divColorGreen");
+      greenDiv.classList.add("divColorNone");
+
+    });
+    
+  </script>
+</html>

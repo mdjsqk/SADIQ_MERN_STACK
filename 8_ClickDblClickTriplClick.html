@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Highlight on Clicks</title>
+    <style>
+      .redColorHighlight {
+        background-color: red;
+      }
+
+      .blueColorHighlight {
+        background-color: blue;
+      }
+
+      .removeHighlightColor {
+        background-color: none;
+      }
+
+    </style>
+  </head>
+  <body>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio, maxime
+      odit, cupiditate dicta culpa praesentium repellat eius quo officiis,
+      itaque pariatur. Fuga ipsa aut temporibus, quasi amet sequi nemo animi.
+    </p>
+    <p>
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Hic
+      voluptatibus, officiis eum incidunt odit, quaerat deserunt recusandae quas
+      nemo aspernatur fugiat in sed quisquam harum nesciunt voluptatum assumenda
+      quibusdam. Molestias.
+    </p>
+    <p>
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Hic
+      voluptatibus, officiis eum incidunt odit, quaerat deserunt recusandae quas
+      nemo aspernatur fugiat in sed quisquam harum nesciunt voluptatum assumenda
+      quibusdam. Molestias.
+    </p>
+  </body>
+
+  <script>
+    //  1. Single click highlight with red color
+    let ptagList = document.querySelectorAll("p");
+
+    ptagList.forEach(ptag => ptag.addEventListener('click', function (event) {
+        ptag.classList.add("redColorHighlight");
+    }));
+
+    //  2. Double click highlight with blue color
+
+    ptagList.forEach(ptag => ptag.addEventListener('dblclick', function (event) {
+        ptag.classList.add("blueColorHighlight");
+        ptag.classList.remove("redColorHighlight");
+        console.log(event);
+    }));
+
+    //  3. Triple click -> removes the highlight
+
+    ptagList.forEach(ptag => ptag.addEventListener('click', function (event) {
+      if(event.detail === 3) {
+        ptag.classList.add("removeHighlightColor");
+        ptag.classList.remove("redColorHighlight");
+        ptag.classList.remove("blueColorHighlight");
+      }
+    }));
+
+  </script>
+</html>
