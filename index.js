@@ -1,11 +1,9 @@
-console.log("Hello world");
-console.log (5 + 4);
+let employees = [
+ {name:"John",salary:50000,active:true},
+ {name:"David",salary:40000,active:false},
+ {name:"Alex",salary:60000,active:true}
+];
 
-let a = "abc";
-
-if (true){
-    a = "xyz";
-    
+for(emp of employees) {
+    console.log(emp.name + " --- " + emp.salary);
 }
-
-console.log(a);
