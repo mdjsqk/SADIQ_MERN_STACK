@@ -1,0 +1,303 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --shadow1: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --border-radius: 10px;
+}
+
+body{
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: #020024;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    height: 100vh;
+}
+
+.main-cont {
+    padding: 0 1rem;
+}
+
+.toolbox-cont{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 80px;
+    padding: 0 2rem;
+    background-color: white;
+    box-shadow: var(--shadow1);
+}
+
+.brand-section{
+    display: flex;
+    align-items: center;
+}
+
+.brand-section > i {
+    font-size: 30px;
+}
+
+.toolbox-priority-cont{
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.color-filters{
+    display: flex;
+    gap: 0.5rem;
+}
+
+.color{
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+}
+
+.color:hover{
+    cursor: pointer;
+    transform: translateY(-2px) scale(1.1);
+    box-shadow: var(--shadow1);
+}
+
+.color:active{
+     transform: translateY(0);
+}
+
+.lightpink{
+    background-color: #ff8fab;
+}
+
+.lightgreen{
+    background-color: #6ee7db;
+}
+
+.lightblue{
+    background-color: #64c5f2;
+}
+
+.black{
+    background-color: #4a5568;
+}
+
+.action-btn-cont{
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-end;
+}
+
+.action-btn-cont > div{
+    padding: 0.75rem 1.5rem;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-weight: 500;
+    color: white;
+    transition: transform 0.3s ease;
+}
+
+.add-btn{
+    background: linear-gradient(135deg, #4ade80, #22c55e);
+}
+
+.remove-btn{
+    background: linear-gradient(135deg, #f87171, #ef4444);
+}
+
+.action-btn-cont > div:hover{
+    transform: translateY(-2px) scale(1.03);
+    box-sizing: var(--shadow1);
+}
+
+.action-btn-cont > div:active{
+    transform: translateY(0);
+}
+
+
+/* Modal Styling */
+.modal-cont{
+    /* Read out the Middle align concept - HW */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 450px;
+    width: 90%;
+    max-width: 550px;
+    border-radius: 20px;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
+    background-color: white;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    display: flex;
+    overflow: hidden;
+}
+
+.modal-cont > div{
+    width: 100%;
+    padding: 2rem;
+}
+
+.modal-header{
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    text-align: center;
+    padding: 2rem 2rem 1rem;
+    line-height: 1.5;
+}
+
+.modal-header h2 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.modal-header p {
+    font-size: 0.95rem;
+        opacity: 0.9;
+        font-weight: 400;
+}
+
+.textArea-cont{
+    background-color: #fafbfc;
+}
+
+textarea {
+    width: 100%;
+    min-width: 150px;
+    min-height: 150px;
+    border: none;
+    resize: none;
+    background-color: transparent;
+    overflow-wrap: break-word;    
+}
+
+.textArea-cont textarea::placeholder{
+    color: #6b7280;
+    font-style: italic;
+    font-size: 1.1rem;
+    font-weight: 550;
+    opacity: 0.8;
+    line-height: 1.5;
+}
+
+textarea:focus {
+    color: #1c222c;
+    font-size: 1.15rem;
+    font-weight: 550;
+    opacity: 0.85;
+    line-height: 1.2;
+}
+
+.priority-color-cont {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.priority-selector-heading {
+    font-size: 1.2rem;
+    font-weight: 550;
+    color: #6b7280;
+}
+
+.priority_buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 1rem;
+}
+
+.priority_btn {
+    padding: 1rem 0.5rem;
+    border-radius: var(--border-radius);
+    border: 3px solid transparent;
+    font-size: 1.5rem;
+    font-weight: 550;
+    color: white;
+    transition: transform 0.3s ease;
+}
+
+.priority_btn:hover {
+    border-color: rgb(127, 184, 248);
+    cursor: pointer;
+    transform: translateY(-1px) scale(1.03);
+    box-shadow: var(--shadow1);
+}
+
+.priority_text p {
+    color: #1c222c;
+    font-size: 1rem;
+    font-weight: 550;
+    opacity: 0.85;
+    line-height: 1.2;
+}
+
+.priority_text span {
+    color: white;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 3px 3px;
+    padding: 1% 8%;
+    box-shadow: var(--shadow1);
+}
+
+.ticket-cont {
+    margin-top: 3rem;
+    width: 300px;
+    height: 150px;
+    background-color: #f5fdf5;
+    border-top: 8px solid #ff8fab;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow1);
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-template-rows: 1fr 2fr;
+}
+
+.ticket-Id span {
+    color: #1c222c;
+    font-size: 1.15rem;
+    font-weight: 550;
+    opacity: 0.85;
+    line-height: 1.2;
+    padding: 0 0.5rem;
+}
+
+.ticket--lock--unlock {
+    display: grid;
+    place-items: center;
+}
+
+.ticket-lock, .ticket-unlock {
+    cursor: pointer;
+    color: #4a5568;
+    font-size: 1.5rem; 
+    grid-row: 1;
+    grid-column: 1;
+}
+
+.ticket-lock {
+    display: none;
+}
+
+.ticket-unlock {
+    display: block;
+}
+
+.ticket_textArea {
+    grid-column: 1/3;
+}
+
+.ticket_textArea textarea {
+    width: 100%;
+    min-width: 100px;
+    min-height: 100px;
+    border: none;
+    resize: none;
+    background-color: transparent;
+    overflow-wrap: break-word; 
+}
