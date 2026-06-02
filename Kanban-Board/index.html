@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <!-- Navigation Bar -->
+    <div class="toolbox-cont">
+      <!-- Branding -->
+      <div class="brand-section">
+        <i class="fa-brands fa-square-dribbble"></i>
+        <h1>TaskFlow</h1>
+      </div>
+      <!-- Priority Filter -->
+      <div class="toolbox-priority-cont">
+        <span class="filter-label">Priority Filters: </span>
+        <div class="color-filters">
+          <div class="lightpink color"></div>
+          <div class="lightblue color"></div>
+          <div class="lightgreen color"></div>
+          <div class="black color"></div>
+        </div>
+      </div>
+      <!-- CTAs -->
+      <div class="action-btn-cont">
+        <div class="add-btn">
+          <i class="fa-solid fa-plus"></i>
+          <span class="btn-text">Add Task</span>
+        </div>
+        <div class="remove-btn">
+          <i class="fa-solid fa-trash"></i>
+          <span class="btn-text">Delete</span>
+        </div>
+      </div>
+    </div>
+    <!-- Main Content -->
+    <div class="main-cont">
+      <!-- Ticket -->
+      <div class="ticket-cont">
+        <!-- Ticket ID -->
+        <div class="ticket-Id">
+          <span>#56321ACDGF</span>
+        </div>
+        <!-- Ticket lock/unlock -->
+        <div class="ticket--lock--unlock">
+          <div class="ticket-lock">
+            <i class="fa-solid fa-lock"></i>
+          </div>
+          <div class="ticket-unlock">
+            <i class="fa-solid fa-unlock"></i>
+          </div>
+        </div>
+        <!-- Ticket text area -->
+        <div class="ticket_textArea">
+          <textarea
+            name="ticket-description-textArea"
+            id="ticket-textArea"
+          ></textarea>
+        </div>
+      </div>
+    </div>
+    <!-- Modal -->
+    <div class="modal-cont">
+      <!-- Heading Content -->
+      <div class="modal-header">
+        <h2>Create New Task</h2>
+        <p>Enter your task details and select a priority level</p>
+      </div>
+      <!-- User Input Area -->
+      <div class="textArea-cont">
+        <textarea
+          name="task-description-textArea"
+          id="taskId-textArea"
+          placeholder="Enter your task description..."
+        ></textarea>
+      </div>
+      <!-- Priority Selectors -->
+      <div class="priority-color-cont">
+        <!-- Priority Selector heading -->
+        <div class="priority-selector-heading">
+          <h3> Select task priority : </h3>
+        </div>
+        <!-- Priority list -->
+        <div class="priority_buttons">
+          <div class="lightpink priority_btn">
+            <span>C</span>
+          </div>        
+          <div class="lightblue priority_btn">
+            <span>H</span>
+          </div>
+          <div class="lightgreen priority_btn">
+            <span>M</span>
+          </div>
+          <div class="black priority_btn">
+            <span>L</span>
+          </div>
+        </div>
+        <!-- Priority text -->
+        <div class="priority_text">
+          <p>Press <span class="priority_text_Enter">Enter</span> after selecting priority</p>
+        </div>
+      </div>
+    </div>
+    
+  </body>
+</html>
